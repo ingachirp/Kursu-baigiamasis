@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  max-width: 1200px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  background-color: white;
+}
+
+.header__hero {
+  padding: 150px 0;
+  font-size: 4em;
+  text-align: center;
+  background-color: rgb(160, 219, 104);
+  color: white;
+}
+
+.header__logo {
+  height: 30px;
+  display: block;
+  padding: 20px 0;
+}
+
+.cards {
+  margin: 1em 0;
+  display: flex;
+}
+
+.card,
+.content {
+  background-color: white;
+  margin: 1em 0;
+  padding: 2em;
+}
+
+.card:not(:last-child) {
+  margin-right: 1em;
+}
+
+.card__title {
+  font-size: 3em;
+  margin: 1rem 0;
+}
+
+.card__paragraph {
+  margin: 0;
+}
+
+.content {
+  display: flex;
+}
+
+.content__article {
+  flex: 2;
+  margin-right: 2em;
+}
+
+.content__title {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.content__sub-header {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
