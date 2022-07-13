@@ -6,20 +6,16 @@ class Form extends React.Component {
         return (
             <div>
                 <div class="container">
-                    <label>First name</label>
-                    <input type="text" name="Name" />
+                    <input type="text" name="Name" placeholder="Vardas" />
                 </div>
                 <div class="container">
-                    <label>Last Name</label>
-                    <input type="text" name="Last-Name" />
+                    <input type="text" name="Last-Name" placeholder="Pavardė" />
                 </div>
                 <div class="container">
-                    <label>Email Address</label>
-                    <input type="text" name="Email-Address" />
+                    <input type="text" name="Email-Address" placeholder="el. paštas"/>
                 </div>
                 <div class="container">
-                    <label>your date of birth</label>
-                    <input type="text" name="Birthday" />
+                    <input type="text" name="Age" placeholder="amžius"/>
                 </div>
                 <div class="btn">
                     <button class="cancel">Cancel</button>
