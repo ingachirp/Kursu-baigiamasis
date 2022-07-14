@@ -1,8 +1,8 @@
-import { body } from 'express-validator';
+import  validator  from 'express-validator';
 
 export const registerValidation = [
-    body('email').isEmail(),
-    body('name').isLength({ min: 3}),
-    body('surname').isLength({ min: 2}),
-    body('age').isLength({ min: 2}),
+    validator.body('email').isEmail(),
+    validator.body('name').isLength({ min: 3}),
+    validator.body('surname').isLength({ min: 2}),
+    validator.body('age').isLength({ min: 2}),
 ]

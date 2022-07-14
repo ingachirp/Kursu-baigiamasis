@@ -1,8 +1,7 @@
-require('dotenv').config();
-const cors = require('cors');
-const { request, response } = require('express');
-const express = require('express');
-const mongoose = require('mongoose');
+import 'dotenv/config';
+import cors from 'cors';
+import express from 'express';
+import mongoose from 'mongoose';
 import { registerValidation } from './validations/auth.js';
 import validationResult from 'express-validator';
 
