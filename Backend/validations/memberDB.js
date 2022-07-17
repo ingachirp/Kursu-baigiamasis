@@ -4,11 +4,11 @@ import UserSchema from '../models/member.js';
 
 export const getAll = async (request, response) => {
     try {
-      const members = await UserSchema.find().populate('members').exec();
-      res.json(posts);
+      const members = await UserSchema.find().populate('user').exec();
+      response.json(members);
     } catch (err) {
       console.log(err);
-      res.status(500).json({
+      response.status(500).json({
         message: 'Nesigavo pamatyti sąrašą',
       });
     }
@@ -16,29 +16,21 @@ export const getAll = async (request, response) => {
   
 export const getOne = async (request, response) => {
     try {
-      const memberId = request.params.id;
+      const name = request.params.name;
+      const surname = request.params.surname;
   
-      UserSchema.findOneAndUpdate(
-        {
-          _id: memberId,
-        },
-        {
-          $inc: { viewsCount: 1 },
-        },
-        {
-          returnDocument: 'after',
-        },
-        (err, doc) => {
+      UserSchema.find(surname,'surname').exec();
+      (err, user) => {
             
-          if (!doc) {
+          if (!user) {
             return response.status(404).json({
               message: 'vartotojas nerastas',
             });
           }
   
-          response.json(doc);
+          response.json(members);
         },
-      ).populate('members');
+      UserSchema.populate('user');
         } catch (err) {
           console.log(err);
           response.status(500).json({
@@ -55,7 +47,7 @@ export const getOne = async (request, response) => {
         {
           _id: memberId,
         },
-        (err, doc) => {
+        (err, user) => {
           if (err) {
             console.log(err);
             return response.status(500).json({
@@ -63,7 +55,7 @@ export const getOne = async (request, response) => {
             });
           }
   
-          if (!doc) {
+          if (!user) {
             return response.status(404).json({
               message: 'vartotojas nerastas',
             });
@@ -98,7 +90,7 @@ export const getOne = async (request, response) => {
         },
       );
   
-      res.json({
+      response.json({
         success: true,
       });
     } catch (err) {
