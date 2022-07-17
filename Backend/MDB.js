@@ -48,8 +48,6 @@ app.use(cors());
     console.log('Serveris paleistas. Laukia užklausų', 9000);
   });
 
-  app.get('/', (request, response) => {
-    response.send('Hello world');
-  });
+  
 
   
